@@ -9,7 +9,12 @@ describe('Test for Person', () => {
   });
 
   test('should return down', () => {
+    // AAA
+    // Arrange / Given
+    person.weight = 45;
+    // Act / When
     const imc = person.calcIMC();
+    // Assert / Then
     expect(imc).toBe('down');
   });
 
@@ -19,4 +24,3 @@ describe('Test for Person', () => {
     expect(imc).toBe('normal');
   });
 });
-

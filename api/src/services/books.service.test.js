@@ -5,7 +5,7 @@ const mockGetAll = jest.fn();
 
 jest.mock('../lib/mongo.lib', () => jest.fn().mockImplementation(() => ({
   getAll: mockGetAll,
-  create: () => {}
+  create: () => {},
 })));
 
 describe('Test for BooksService', () => {
@@ -17,7 +17,7 @@ describe('Test for BooksService', () => {
   });
 
   describe('test for getBooks', () => {
-    test('should return a list book', async() => {
+    test('should return a list book', async () => {
       // Arrange
       const fakeBooks = generateManyBooks(20);
       mockGetAll.mockResolvedValue(fakeBooks);
@@ -29,7 +29,7 @@ describe('Test for BooksService', () => {
       expect(mockGetAll).toHaveBeenCalledTimes(1);
       expect(mockGetAll).toHaveBeenCalledWith('books', {});
     });
-    test('should return a list book', async() => {
+    test('should return a list book', async () => {
       // Arrange
       const fakeBooks = generateManyBooks(4);
       mockGetAll.mockResolvedValue(fakeBooks);
